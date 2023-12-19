@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>靠墙不许抓 - 游戏介绍</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #666;
+    }
+
+    .game-image {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+    }
+
+    .rules {
+      margin-top: 40px;
+    }
+
+    .rules h2 {
+      color: #333;
+    }
+
+    .rules ol {
+      list-style-type: decimal;
+      padding-left: 20px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>靠墙不许抓</h1>
+    <p><strong>注意！官方正版！</strong></p>
+
+    <div class="rules">
+      <h2>游戏规则</h2>
+      <ol>
+        <li>由1-10名玩家组成人阵营，由1-2名玩家组成鬼阵营。</li>
+        <li>顾名思义，就是鬼抓人，但靠墙鬼不能抓。</li>
+      </ol>
+    </div>
+
+    <p class="start-game">【开始游戏】</p>
+  </div>
+
+  <div class="footer">
+    <p>感谢您参与我们的室外游戏，希望您能享受这个刺激有趣的游戏！</p>
+  </div>
+</body>
+</html>
