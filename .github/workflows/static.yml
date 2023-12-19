@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1649C视频浏览器</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+    }
+
+    .file-list {
+      flex: 1;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .file-list ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .file-list li {
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .file-list li:hover {
+      color: #fff;
+      background-color: #333;
+    }
+
+    .player {
+      flex: 3;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .player video {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="file-list">
+      <h2>视频列表</h2>
+      <ul id="video-list"></ul>
+    </div>
+
+    <div class="player">
+      <h2>播放器</h2>
+      <video id="video-player" controls></video>
+    </div>
+  </div>
+
+  <script>
+    // 获取video列表
+    const videoList = document.getElementById('video-list');
+
+    // 枚举运行目录下所有mp4文件
+    const files = [
+      '【1649C】边睡边学_ 用木头敲击中摩斯密码催眠你! 清脆的木质敲击音 - 1.【1649C】边睡边学_ 用木头敲击中摩斯密码催眠你! 清脆的木质敲击音(Av367242564,P1).mp4',
+      '【1649C】不刺眼的灯光触发, 听从指令快速入睡 _ 近耳轻语呼吸引导放松 _ 慢速数数 _ 睡前 - 1.【1649C】不刺眼的灯光触发, 听从指令快速入睡 _ 近耳轻语呼吸引导放松(Av318927696,P1).mp4',
+      '【1649C】超舒服! 大脑都感觉到震动的鼓膜按摩, 击碎免疫屏障! _ 17种敏感触麦音 _ 复合 - 1.【1649C】超舒服! 大脑都感觉到震动的鼓膜按摩, 击碎免疫屏障! _ 1(Av663860761,P1).mp4',
+      '【1649C】电子褪黑素_ 耳根发麻, 深入脑内的海绵刮麦音, 温柔轻缓_ 缓解头痛 _ 呼吸速率， - 1.【1649C】电子褪黑素_ 意外令人感觉很安心的声音 _ 深入脑内的海绵麦套(Av322572265,P1).mp4',
+      '【1649C】免疫向：头皮发麻的慢速环绕触发 _ 万元VR麦全方位测试 _ 木头纸壳皮质刮擦玻璃鹅毛 - 1.【1649C】免疫向：头皮发麻的慢速环绕触发 _ 万元VR麦全方位测试 _ (Av831954380,P1).mp4',
+      '【1649C】蓬松柔软鹅毛棒，深度清洁耳膜与大脑皮层 _ 穿脑_双耳_复合环绕三种模式 _ 无人声  - 1.【1649C】深度清洁耳膜与大脑皮层，舒适的中低频鹅毛棒采耳 _ 穿脑_双耳(Av962798818,P1).mp4',
+      '【1649C】声像实验：温柔系低音直升机, 13种穿脑模式 _ 免疫向 _ 解压放松 _ 复合环绕穿 - 1.【1649C】声像实验：温柔系低音直升机, 13种穿脑模式 _ 免疫向 _ (Av620856376,P1).mp4',
+      '【1649C】自用：很累头很疼时听的钝钝软木触发音 _ 缓解头痛 _双声道无人声 _ 软木板刮擦敲击 - 1.【1649C】自用：很累头很疼时听的钝钝软木触发音 _ 缓解头痛 _双声道无(Av493604351,P1).mp4',
+      '【有福同享】油管300W播放量的彩虹摆动波，进来看看？ 开头音量预警,带耳机听 _ 油管搬运 - 1.【有福同享】3D放松_ 300W人看过的奇妙彩虹摆动波! 开头音量预警,带耳(Av664768116,P1).mp4'
+    ];
+
+    // 循环创建列表项
+    files.forEach(file => {
+      const listItem = document.createElement('li');
+      listItem.textContent = file;
+      listItem.addEventListener('click', () => {
+        playVideo(file);
+      });
+      videoList.appendChild(listItem);
+    });
+
+    // 播放选中的视频
+    function playVideo(file) {
+      const videoPlayer = document.getElementById('video-player');
+      videoPlayer.src = file;
+      videoPlayer.play();
+    }
+  </script>
+</body>
+</html>
